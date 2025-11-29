@@ -33,26 +33,8 @@ genai.configure(api_key = st.secrets["GOOGLE_API_KEY"])
 
 if st.button("Get Weather"):
     if city:
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-1.5-flash-latest")
         response = model.generate_content(f"give a simple weather report on {city}.")
         st.success(response.text)
     else:
         st.warning("Please Enter A City")
-
-# st.title("🌦️ Weather App Skeleton")
-
-# city = st.text_input("Enter City Name:")
-
-# # Load API key safely
-# genai.configure(api_key =st.secrets["AIzaSyA8Y0cZ3ZSyPL7HAduolDbA99WtP85yA6g"])
-
-# # Configure Gemini API
-# genai.configure(api_key=api_key)
-
-# if st.button("Get Weather"):
-#     if city:
-#         model = genai.GenerativeModel("gemini-1.5-flash")
-#         response = model.generate_content(f"Give a simple weather report for {city}.")
-#         st.success(response.text)
-#     else:
-#         st.warning("Please enter a city name.")
